@@ -1,4 +1,4 @@
-name: Custom Action
+name: Upload to Azure Blob
  
 on:
   push:
