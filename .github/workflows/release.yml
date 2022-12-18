@@ -25,7 +25,7 @@ jobs:
           major=$(echo $version | cut -d '.' -f 1)
           minor=$(echo $version | cut -d '.' -f 2)
           patch=$(echo $version | cut -d '.' -f 3)
-          echo $version
+          echo Version is: "$major.$minor.$patch"
 
       # Increment the patch number
       - name: Increment patch number
