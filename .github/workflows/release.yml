@@ -13,7 +13,7 @@ jobs:
 
       # Zip up the web directory
       - name: Zip web directory
-        run: zip -r web.zip web
+        run: zip -r web.zip ./web
 
       # Create a new GitHub release
       - name: Create Release
