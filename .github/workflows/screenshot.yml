@@ -18,8 +18,10 @@ jobs:
     - name: screenshots-ci-action
       uses: flameddd/screenshots-ci-action@master
       with:
+        noDesktop: true
+        noCommitHashFileName: true
         url: https://stopasswordgenrvdwegen.azureedge.net
-        devices: iPad Pro landscape
+        devices: iPhone 13 Pro,iPhone 13 Pro landscape,iPad Pro 11,iPad Pro 11 landscape,
     - name: Commit screenshots
       id: commit
       run: |
