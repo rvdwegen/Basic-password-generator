@@ -33,6 +33,7 @@ jobs:
           patch=$((patch + 1))
           # Update the version file with the new version number
           echo "$major.$minor.$patch" > version
+          echo Version is: "$major.$minor.$patch"
 
       # Create a tag and push it to the remote repository
       - name: Create and push tag
