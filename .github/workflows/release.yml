@@ -1,4 +1,4 @@
-name: Build Release
+name: Build release
 
 on:
   workflow_dispatch:
@@ -25,11 +25,6 @@ jobs:
           major=$(echo $version | cut -d '.' -f 1)
           minor=$(echo $version | cut -d '.' -f 2)
           patch=$(echo $version | cut -d '.' -f 3)
-          echo Version is: "$major.$minor.$patch"
-
-      # Increment the patch number
-      - name: Increment patch number
-        run: |
           patch=$((patch + 1))
           # Update the version file with the new version number
           echo "$major.$minor.$patch" > version
