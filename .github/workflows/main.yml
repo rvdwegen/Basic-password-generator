@@ -3,7 +3,7 @@ name: Upload to Azure Blob
 on:
   push:
     paths:
-      - 'index.html'
+      - web/**
       
   workflow_dispatch:
       
