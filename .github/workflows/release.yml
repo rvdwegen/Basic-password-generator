@@ -13,16 +13,45 @@ jobs:
 
       # Zip up the web directory
       - name: Zip web directory
-        run: zip -r web.zip ./web
+        run: zip -r web.zip web
 
-      # Create a new GitHub release
+      # Determine the current version number
+      - name: Determine version number
+        id: version
+        run: |
+          # Extract the current version number from the version file
+          version=$(cat version)
+          # Split the version number into major, minor, and patch numbers
+          major=$(echo $version | cut -d '.' -f 1)
+          minor=$(echo $version | cut -d '.' -f 2)
+          patch=$(echo $version | cut -d '.' -f 3)
+
+      # Increment the patch number
+      - name: Increment patch number
+        run: |
+          patch=$((patch + 1))
+          # Update the version file with the new version number
+          echo "$major.$minor.$patch" > version
+
+      # Create a tag and push it to the remote repository
+      - name: Create and push tag
+        run: |
+          git config --local user.email "github@aeternus.tech"
+          git config --local user.name "Roel van der Wegen"
+          git tag "v$major.$minor.$patch"
+          git push origin "v$major.$minor.$patch"
+
+      # Create a release for the tag using the GitHub API
       - name: Create Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: latest
-          release_name: latest
-          draft: false
-          prerelease: false
-          file_output: web.zip
+        run: |
+          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+               -X POST \
+               -d '{"tag_name": "v$major.$minor.$patch", "name": "Release v$major.$minor.$patch", "draft": false, "prerelease": false}' \
+               https://api.github.com/repos/${{ github.repository }}/releases
+      # Upload the zip file as a release asset
+      - name: Upload Release Asset
+        run: |
+          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+               -H "Content-Type: application/zip" \
+               --data-binary @web.zip \
+               "https://uploads.github.com/repos/${{ github.repository }}/releases/v$major.$minor.$patch/assets?name=web.zip
