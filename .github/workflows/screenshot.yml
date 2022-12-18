@@ -10,7 +10,7 @@ jobs:
   screenshots:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: install puppeteer-headful
       uses: mujo-code/puppeteer-headful@master # Required for headful puppeteer
       env:
@@ -19,8 +19,18 @@ jobs:
       uses: flameddd/screenshots-ci-action@master
       with:
         url: https://stopasswordgenrvdwegen.azureedge.net
-        devices: iPhone 6,iPhone 6 landscape,Nexus 7,Pad Pro,Galaxy S III landscape,iPad Pro landscape
-    - uses: actions/upload-artifact@v2 # Uplaod screenshots to Actions Artifacts via actions/upload-artifact@v2
+        devices: iPad Pro landscape
+    - name: Commit screenshots
+      id: commit
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add . --force
+        git commit -am "commit screenshots"
+        fi
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      if: steps.commit.outputs.exit_code == 0
       with:
-        path: screenshots
-        name: Download-screenshots
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
