@@ -20,6 +20,7 @@ jobs:
       with:
         noDesktop: false
         noCommitHashFileName: true
+        waitUntil: networkidle2
         url: https://stopasswordgenrvdwegen.azureedge.net
         devices: iPhone 6,iPhone 6 landscape,iPad Pro 11,iPad Pro 11 landscape
     - name: Commit screenshots
