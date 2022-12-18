@@ -19,3 +19,4 @@ jobs:
         release_name: latest
         draft: false
         prerelease: false
+        file_output: release.zip
