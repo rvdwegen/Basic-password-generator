@@ -3,6 +3,7 @@
     <title>Password Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="resources/stars.css">
     <link rel="stylesheet" href="resources/style.css">
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="resources/favicon/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/favicon/apple-touch-icon-114x114.png" />
@@ -26,13 +27,17 @@
     <meta name="msapplication-square310x310logo" content="resources/favicon/mstile-310x310.png" />
   </head>
   <body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
     <div class="container">
       <h1>Password Generator</h1>
       <p>Use the options below to customize your password:</p>
       <form id="password-form">
         <label for="length">Length:</label>
-        <input type="range" id="length" name="length" min="8" max="32" value="12" oninput="document.getElementById('length-value').textContent = this.value">
         <span id="length-value" style="float: right">12</span>
+        <input type="range" id="length" name="length" min="8" max="32" value="12" oninput="document.getElementById('length-value').textContent = this.value">
+        <br>
         <br>
         <input type="checkbox" id="include-uppercase" name="include-uppercase" checked="true">
         <label for="include-uppercase">Include uppercase letters</label>
