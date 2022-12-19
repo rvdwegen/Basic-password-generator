@@ -76,14 +76,3 @@ form.addEventListener('submit', (event) => {
     passwordInput.textContent = defaultPassword;
 
 // #endregion
-
-// Randomly sets the background of the HTML body
-const randomBackground = () => {
-    const totalCount = 2;
-    const num = Math.ceil(Math.random() * totalCount);
-    document.body.background = 'resources/'+num+'.jpg';
-};
-
-window.onload = () => {
-    randomBackground();
-};
