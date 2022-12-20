@@ -36,9 +36,8 @@ h1 {
 }
 p {
   margin: 0.5em 0;
-  white-space: nowrap;
+  white-space: normal;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 input[type="range"] {
   width: 100%;
