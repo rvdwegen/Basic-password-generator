@@ -1,10 +1,6 @@
 name: Upload to Azure Blob
  
 on:
-  push:
-    paths:
-      - web/**
-      
   workflow_dispatch:
       
 env:
