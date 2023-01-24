@@ -63,7 +63,7 @@ button {
   cursor: pointer;
 }
 
-p#password:focus {
+#password:focus {
   animation:FocusInput 0.2s;
   -webkit-animation:FocusInput 0.2s; /* Safari and Chrome */
 }
