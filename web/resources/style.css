@@ -64,11 +64,12 @@ button {
 }
 
 input#password {
-  border: 0px;
+  border : none;
   background-color: rgba(255, 255, 255, 0);
 }
 
 input#password:focus {
+  border : none;
   animation:FocusInput 0.2s;
   -webkit-animation:FocusInput 0.2s; /* Safari and Chrome */
 }
