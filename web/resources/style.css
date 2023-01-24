@@ -63,11 +63,14 @@ button {
   cursor: pointer;
 }
 
-@keyframes animStar {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-2000px);
-  }
+p#password:focus {
+  animation:FocusInput 0.2s;
+  -webkit-animation:FocusInput 0.2s; /* Safari and Chrome */
+}
+
+@keyframes FocusInput
+{
+0%      {background-color: rgba(255, 255, 255, 0.300);}
+99.999% {background-color: rgba(255, 255, 255, 0.300);}
+100%    {background-color: rgba(255, 255, 255, 0.300);}
 }
