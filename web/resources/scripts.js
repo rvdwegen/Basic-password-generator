@@ -62,7 +62,7 @@ const copyText = () => {
     const Text = document.getElementById("password");
     Text.select();
     navigator.clipboard.writeText(Text.value);
-}
+};
 
 // #region Generate a default password when the page loads
 
