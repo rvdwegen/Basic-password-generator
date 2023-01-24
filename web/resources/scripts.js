@@ -55,7 +55,7 @@ form.addEventListener('submit', (event) => {
     const password = generatePassword(options);
 
     // Display the password in the password input element
-    passwordInput.textContent = password;
+    passwordInput.value = password;
 });
 
 const copyText = () => {
@@ -79,6 +79,6 @@ const copyText = () => {
     const defaultPassword = generatePassword(defaultOptions);
 
     // Display the default password in the password input element
-    passwordInput.textContent = defaultPassword;
+    passwordInput.value = defaultPassword;
 
 // #endregion
