@@ -65,10 +65,7 @@ button {
 
 input#password {
   outline: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border: none;
   width: 100%;
   background-color: rgba(255, 255, 255, 0);
   color: rgb(255, 255, 255);
@@ -76,10 +73,7 @@ input#password {
 
 input#password:focus {
   outline: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border: none;
   animation:FocusInput 0.2s;
   -webkit-animation:FocusInput 0.2s; /* Safari and Chrome */
 }
