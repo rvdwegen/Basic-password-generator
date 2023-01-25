@@ -69,11 +69,13 @@ textarea#password {
   width: 100%;
   background-color: rgba(255, 255, 255, 0);
   color: rgb(255, 255, 255);
+  resize: none;
 }
 
 textarea#password:focus {
   outline: none;
   border: none;
+  resize: none;
   animation:FocusInput 0.2s;
   -webkit-animation:FocusInput 0.2s; /* Safari and Chrome */
 }
