@@ -40,7 +40,6 @@ p {
   overflow: hidden;
 }
 input[type="range"] {
-  background: #007bff;
   width: 100%;
 }
 .password-container {
