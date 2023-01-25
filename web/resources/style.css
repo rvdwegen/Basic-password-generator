@@ -63,7 +63,7 @@ button {
   cursor: pointer;
 }
 
-input#password {
+textarea#password {
   outline: none;
   border: none;
   width: 100%;
@@ -71,7 +71,7 @@ input#password {
   color: rgb(255, 255, 255);
 }
 
-input#password:focus {
+textarea#password:focus {
   outline: none;
   border: none;
   animation:FocusInput 0.2s;
