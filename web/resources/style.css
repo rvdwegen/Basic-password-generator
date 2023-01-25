@@ -63,10 +63,20 @@ button {
   cursor: pointer;
 }
 
-p#password:focus {
+input#password {
+  border: none;
+  width: 98%;
+}
+
+input#password:focus {
   animation:FocusInput 0.2s;
   -webkit-animation:FocusInput 0.2s; /* Safari and Chrome */
 }
+
+/* p#password:focus {
+  animation:FocusInput 0.2s;
+  -webkit-animation:FocusInput 0.2s; /* Safari and Chrome */
+} */
 
 @keyframes FocusInput
 {
