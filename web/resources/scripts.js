@@ -56,6 +56,8 @@ form.addEventListener('submit', (event) => {
 
     // Display the password in the password input element
     passwordInput.textContent = password;
+    
+    copyText();
 });
 
 const copyText = () => {
