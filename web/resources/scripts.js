@@ -55,13 +55,13 @@ form.addEventListener('submit', (event) => {
     const password = generatePassword(options);
 
     // Display the password in the password input element
-    passwordInput.value = password;
+    passwordInput.textContent = password;
 });
 
 const copyText = () => {
     const Text = document.getElementById("password");
     Text.select();
-    navigator.clipboard.writeText(Text.value);
+    navigator.clipboard.writeText(Text.textContent);
 };
 
 // #region Generate a default password when the page loads
@@ -79,6 +79,6 @@ const copyText = () => {
     const defaultPassword = generatePassword(defaultOptions);
 
     // Display the default password in the password input element
-    passwordInput.value = defaultPassword;
+    passwordInput.textContent = defaultPassword;
 
 // #endregion
