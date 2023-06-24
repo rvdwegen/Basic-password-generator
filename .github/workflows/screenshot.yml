@@ -1,7 +1,7 @@
 name: Take screenshots
 on:
   workflow_run:
-    workflows: ["Upload to Azure Blob"]
+    workflows: ["Azure Static Web Apps CI/CD"]
     types:
       - completed
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
         noDesktop: false
         noCommitHashFileName: true
         waitUntil: networkidle2
-        url: https://stopasswordgenrvdwegen.azureedge.net
+        url: https://password.vdwegen.app/
         devices: iPhone 6,iPhone 6 landscape,iPad Pro 11,iPad Pro 11 landscape
     - name: Commit screenshots
       id: commit
